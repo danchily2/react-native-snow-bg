@@ -15,7 +15,7 @@ const FALL_DURATIONS = {
   medium: [15000, 30000],
   slow: [30000, 60000],
 };
-const SNOWFLAKE_TYPES = ['❄', '❅', '❆'];
+const SNOWFLAKE_TYPES = ['❄️', '❄️', '❄️'];
 
 export default function Snowflake({scene, fallSpeed}) {
   const [config, setConfig] = useState(() =>
