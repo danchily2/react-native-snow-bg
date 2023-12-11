@@ -46,6 +46,7 @@ export default function Snow({
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
+    pointerEvents: 'none'
   },
   stretchDimensions: {
     width: '100%',
