@@ -15,10 +15,8 @@ const FALL_DURATIONS = {
   medium: [15000, 30000],
   slow: [30000, 60000],
 };
-const SNOWFLAKE_TYPES = ['❄️', '❄️', '❄️'];
-const SNOWFLAKE_GIFT_TYPES = ['🎁'];
 
-export default function Snowflake({scene, fallSpeed, gift=false}) {
+export default function Snowflake({scene, fallSpeed, gift}) {
   const [config, setConfig] = useState(() =>
     getConfig({scene, fallSpeed, initialDelay: true, gift}),
   );
@@ -118,7 +116,7 @@ function getConfig({scene, initialDelay = false, fallSpeed, gift=false} = {}) {
 
   const size = gift?randomInt(20, 28):randomInt(10, 18);
   const opacity = randomInt(4, 10) / 10;
-  const type = gift?SNOWFLAKE_GIFT_TYPES[0]:SNOWFLAKE_TYPES[randomInt(0, 2)];
+  const type = gift?'🎁':'❄️';
   const xPosition = randomInt(0, width);
 
   //fall animation
