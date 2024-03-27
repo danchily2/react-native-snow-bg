@@ -8,6 +8,7 @@ export default function Snow({
   snowflakesCount = 100,
   fallSpeed = 'medium',
   fullScreen = false,
+  gift = false,
 }) {
   const [scene, setScene] = React.useState(() => {
     if (fullScreen) {
@@ -37,7 +38,7 @@ export default function Snow({
         new Array(snowflakesCount)
           .fill(true)
           .map((_, i) => (
-            <Snowflake key={i} scene={scene} fallSpeed={fallSpeed} />
+            <Snowflake key={i} scene={scene} fallSpeed={fallSpeed} gift={gift}/>
           ))}
     </View>
   );

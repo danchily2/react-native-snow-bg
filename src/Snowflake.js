@@ -16,10 +16,11 @@ const FALL_DURATIONS = {
   slow: [30000, 60000],
 };
 const SNOWFLAKE_TYPES = ['❄️', '❄️', '❄️'];
+const SNOWFLAKE_GIFT_TYPES = ['🎁'];
 
-export default function Snowflake({scene, fallSpeed}) {
+export default function Snowflake({scene, fallSpeed, gift=false}) {
   const [config, setConfig] = useState(() =>
-    getConfig({scene, fallSpeed, initialDelay: true}),
+    getConfig({scene, fallSpeed, initialDelay: true, gift}),
   );
   const animatedY = useRef(new Animated.Value(START_Y_POSITION)).current;
   const animatedRotation = useRef(new Animated.Value(0)).current;
@@ -108,16 +109,16 @@ export default function Snowflake({scene, fallSpeed}) {
   );
 }
 
-function getConfig({scene, initialDelay = false, fallSpeed} = {}) {
+function getConfig({scene, initialDelay = false, fallSpeed, gift=false} = {}) {
   const {width} = scene;
   let speed = 'medium';
   if (FALL_SPEEDS.includes(fallSpeed)) {
     speed = fallSpeed;
   }
 
-  const size = randomInt(10, 18);
+  const size = gift?randomInt(20, 28):randomInt(10, 18);
   const opacity = randomInt(4, 10) / 10;
-  const type = SNOWFLAKE_TYPES[randomInt(0, 2)];
+  const type = gift?SNOWFLAKE_GIFT_TYPES[0]:SNOWFLAKE_TYPES[randomInt(0, 2)];
   const xPosition = randomInt(0, width);
 
   //fall animation
