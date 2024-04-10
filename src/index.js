@@ -1,4 +1,4 @@
 import Snow from "./Snow";
-import Snowflake from "./Snowflake";
+import Gifts from "./Gifts";
 
-export { Snow, Snowflake };
+export { Snow, Gifts };
