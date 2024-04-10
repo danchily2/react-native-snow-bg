@@ -8,7 +8,7 @@ export default function Snow({
   snowflakesCount = 100,
   fallSpeed = 'medium',
   fullScreen = false,
-  gift = false,
+  gift = true,
 }) {
   const [scene, setScene] = React.useState(() => {
     if (fullScreen) {
