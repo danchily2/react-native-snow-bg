@@ -116,7 +116,7 @@ function getConfig({scene, initialDelay = false, fallSpeed, gift=false} = {}) {
 
   const size = gift?randomInt(20, 28):randomInt(10, 18);
   const opacity = randomInt(4, 10) / 10;
-  const type = gift?'🎁':'❄️';
+  const type = '🎁';
   const xPosition = randomInt(0, width);
 
   //fall animation
